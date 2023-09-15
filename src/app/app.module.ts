@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MovieModule } from './movie/movie.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MovieModule
   ],
   providers: [],
   bootstrap: [AppComponent]
