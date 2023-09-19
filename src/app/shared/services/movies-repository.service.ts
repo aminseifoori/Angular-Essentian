@@ -2,6 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EnvironmentUrlService } from './environment-url.service';
 import { Movie } from 'src/app/interface/movie.model';
+import { AuthenticatedResponse } from '../Interface/authenticated-response';
+import { LoginModel } from '../Interface/login-model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +14,8 @@ export class MoviesRepositoryService {
   constructor(private http: HttpClient, private envUrl: EnvironmentUrlService) { }
 
   public getMovies = () => {
-    return this.http.get<Movie[]>(`${this.envUrl.apiURL}/api/movies`);
+    console.log(`${this.envUrl.apiURL}/api/movies`)
+    return this.http.get<Movie[]>(`${this.envUrl.apiURL}/api/movies`, this.generateHeaders());
   }
 
   public createMovie = (movie: Movie) => {
@@ -31,4 +35,5 @@ export class MoviesRepositoryService {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }
   }
+
 }

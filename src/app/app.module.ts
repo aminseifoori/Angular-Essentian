@@ -8,6 +8,11 @@ import { MenuComponent } from './menu/menu.component';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieModule } from './movie/movie.module';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() { 
+  return localStorage.getItem("jwt"); 
+}
 
 @NgModule({
   declarations: [
@@ -21,7 +26,14 @@ import { MovieModule } from './movie/movie.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MovieModule
+    MovieModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:5001"],
+        disallowedRoutes: []
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

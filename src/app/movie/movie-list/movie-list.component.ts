@@ -21,6 +21,6 @@ export class MovieListComponent implements OnInit{
     this.repository.getMovies()
     .subscribe(result => {
       this.movies = result;
-    })
+    });
   }
 }
