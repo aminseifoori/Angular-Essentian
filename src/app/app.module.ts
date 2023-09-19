@@ -9,6 +9,8 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieModule } from './movie/movie.module';
 import { JwtModule } from '@auth0/angular-jwt';
+import { InternalServerComponent } from './error/internal-server/internal-server.component';
+
 
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
@@ -19,7 +21,8 @@ export function tokenGetter() {
     AppComponent,
     HomeComponent,
     MenuComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    InternalServerComponent
   ],
   imports: [
     BrowserModule,
