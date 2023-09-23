@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CostModel } from 'src/app/shared/Interface/cost.model';
 import { Movie } from 'src/app/shared/Interface/movie.model';
 import { ErrorHandlerService } from 'src/app/shared/services/error-handler.service';
 import { MoviesRepositoryService } from 'src/app/shared/services/movies-repository.service';
@@ -26,11 +27,17 @@ export class MovieDetailsComponent implements OnInit {
 
     this.repository.getMovie(id)
     .subscribe({
-      next: (result: Movie) => this.movie = result,
+      next: (result: Movie) => {
+        this.movie = result;
+      },
       error: (err: HttpErrorResponse) => {
         this.errorHandler.handleError(err);
         this.errorMessage = this.errorHandler.errorMessage;
       }
     });
+  }
+
+  printToConsole = (param: CostModel) => {
+    console.log(param);
   }
 }
