@@ -4,7 +4,7 @@
             <strong>Movie name:</strong>
         </div>
         <div class="col-md-3">
-            {{movie?.name}}
+            {{ movie?.name }}
         </div>
     </div>
     <div class="row">
@@ -12,7 +12,15 @@
             <strong>Release Date:</strong>
         </div>
         <div class="col-md-3">
-            {{movie?.releaseDate | date: 'dd/MM/yyyy'}}
+            {{ movie?.releaseDate | date: 'dd/MM/yyyy'}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <strong>Cost Quantity:</strong>
+        </div>
+        <div class="col-md-3">
+            <span class="text-info" [appAppend]="movie"></span>
         </div>
     </div>
 </div>

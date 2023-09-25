@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MovieModule } from './movie/movie.module';
 import { JwtModule } from '@auth0/angular-jwt';
 import { InternalServerComponent } from './error/internal-server/internal-server.component';
+import { DatePipe } from '@angular/common';
 
 
 export function tokenGetter() { 
@@ -38,7 +39,7 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

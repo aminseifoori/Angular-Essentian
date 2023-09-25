@@ -4,6 +4,7 @@ import { EnvironmentUrlService } from './environment-url.service';
 import { Movie } from 'src/app/shared/Interface/movie.model';
 import { AuthenticatedResponse } from '../Interface/authenticated-response';
 import { LoginModel } from '../Interface/login-model';
+import { MovieCreateModel } from '../Interface/movie-create.model';
 
 
 @Injectable({
@@ -22,7 +23,7 @@ export class MoviesRepositoryService {
     return this.http.get<Movie>(`${this.envUrl.apiURL}/api/movies/` + id, this.generateHeaders());
   }
 
-  public createMovie = (movie: Movie) => {
+  public createMovie = (movie: MovieCreateModel) => {
     return this.http.post<Movie>(`${this.envUrl.apiURL}/api/movies`, movie, this.generateHeaders());
   }
 
