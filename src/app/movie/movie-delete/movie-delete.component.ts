@@ -44,7 +44,7 @@ export class MovieDeleteComponent implements OnInit {
         const config: ModalOptions = {
           initialState: {
             modalHeaderText: 'Success Message',
-            modalBodyText: `Owner deleted successfully`,
+            modalBodyText: `Movie deleted successfully`,
             okButtonText: 'OK'
           }
         };
