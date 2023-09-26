@@ -8,6 +8,8 @@ import { CostsComponent } from './movie-details/costs/costs.component';
 import { SharedModule } from '../shared/shared.module';
 import { MovieCreateComponent } from './movie-create/movie-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MovieUpdateComponent } from './movie-update/movie-update.component';
+import { MovieDeleteComponent } from './movie-delete/movie-delete.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     MovieListComponent,
     MovieDetailsComponent,
     CostsComponent,
-    MovieCreateComponent
+    MovieCreateComponent,
+    MovieUpdateComponent,
+    MovieDeleteComponent
   ],
   imports: [
     CommonModule,

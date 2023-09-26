@@ -19,8 +19,8 @@
               <td>{{movie.name}}</td>
               <td>{{movie.releaseDate | date: 'dd/MM/yyyy'}}</td>
               <td><button type="button" id="details" class="btn btn-primary" (click)="getMovieDetail(movie.id)">Details</button></td>
-              <td><button type="button" id="update" class="btn btn-success">Update</button></td>
-              <td><button type="button" id="delete" class="btn btn-danger">Delete</button></td>
+              <td><button type="button" id="update" class="btn btn-success" (click)="redirectToUpdatePage(movie.id)">Update</button></td>
+              <td><button type="button" id="delete" class="btn btn-danger" (click)="redirectToDeletePage(movie.id)">Delete</button></td>
             </tr>
           </tbody>
         </table>

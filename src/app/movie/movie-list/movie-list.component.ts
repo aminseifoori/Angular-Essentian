@@ -39,4 +39,14 @@ export class MovieListComponent implements OnInit{
     const detailsUrl: string = `/movie/detail/${id}`; 
     this.router.navigate([detailsUrl]); 
   }
+
+  private redirectToUpdatePage = (id) =>{
+    const updateUrl: string = `/movie/update/${id}`; 
+    this.router.navigate([updateUrl]); 
+  }
+
+  public redirectToDeletePage = (id) => { 
+    const deleteUrl: string = `/movie/delete/${id}`; 
+    this.router.navigate([deleteUrl]); 
+  }
 }

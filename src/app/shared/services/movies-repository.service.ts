@@ -5,6 +5,7 @@ import { Movie } from 'src/app/shared/Interface/movie.model';
 import { AuthenticatedResponse } from '../Interface/authenticated-response';
 import { LoginModel } from '../Interface/login-model';
 import { MovieCreateModel } from '../Interface/movie-create.model';
+import { MovieUpdateModel } from '../Interface/movie-update.model';
 
 
 @Injectable({
@@ -27,12 +28,12 @@ export class MoviesRepositoryService {
     return this.http.post<Movie>(`${this.envUrl.apiURL}/api/movies`, movie, this.generateHeaders());
   }
 
-  public updateMovie = (movie: Movie) => {
-    return this.http.put(`${this.envUrl.apiURL}/api/movies`, movie, this.generateHeaders());
+  public updateMovie = (movie: MovieUpdateModel, id:string) => {
+    return this.http.put(`${this.envUrl.apiURL}/api/movies/` + id, movie, this.generateHeaders());
   }
 
-  public deleteMovie = () => {
-    return this.http.delete(`${this.envUrl.apiURL}/api/movies`);
+  public deleteMovie = (id: string) => {
+    return this.http.delete(`${this.envUrl.apiURL}/api/movies/` + id);
   }
 
   private generateHeaders = () => {
