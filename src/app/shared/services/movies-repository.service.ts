@@ -2,8 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EnvironmentUrlService } from './environment-url.service';
 import { Movie } from 'src/app/shared/Interface/movie.model';
-import { AuthenticatedResponse } from '../Interface/authenticated-response';
-import { LoginModel } from '../Interface/login-model';
 import { MovieCreateModel } from '../Interface/movie-create.model';
 import { MovieUpdateModel } from '../Interface/movie-update.model';
 
